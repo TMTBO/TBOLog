@@ -1,0 +1,11 @@
+target 'Example_macOS' do
+    platform :osx, '10.10'
+    use_frameworks!
+    pod 'TBOLoger', :path => '../', :testspecs => ['Tests']
+end
+
+target 'Example_iOS' do
+    platform :ios, '9.0'
+    use_frameworks!
+    pod 'TBOLoger', :path => '../', :testspecs => ['Tests']
+end
