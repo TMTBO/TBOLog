@@ -1,11 +1,26 @@
-target 'Example_macOS' do
+target 'TBOLog_macOS' do
     platform :osx, '10.10'
     use_frameworks!
-    pod 'TBOLoger', :path => '../', :testspecs => ['Tests']
+    pod 'TBOLog', :path => '../', :testspecs => ['Tests']
 end
 
-target 'Example_iOS' do
+target 'TBOLog_iOS' do
     platform :ios, '9.0'
     use_frameworks!
-    pod 'TBOLoger', :path => '../', :testspecs => ['Tests']
+    pod 'TBOLog', :path => '../', :testspecs => ['Tests']
 end
+
+pod 'Quick'
+pod 'Nimble'
+
+post_install do |installer|
+    iOS = installer.pods_project.targets.find { |target| target.name == 'TBOLog-iOS' }
+    macOS = installer.pods_project.targets.find { |target| target.name == 'TBOLog-macOS' }
+    iOS.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.0'
+    end
+    macOS.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.0'
+    end
+end
+
