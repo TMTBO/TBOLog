@@ -34,6 +34,7 @@ extension TBOLog {
         config.destination = destination
         config.infoTag = infoTag
         config.path = path
+        config.prefix = prefix
         return start(config)
     }
     
@@ -82,6 +83,7 @@ extension TBOLog {
         _ contents: Any...,
         destination: Destination = config.destination,
         infoTag: LogInfoTag = config.infoTag,
+        prefix: String? = config.prefix,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -90,6 +92,7 @@ extension TBOLog {
             contents: contents,
             destination: destination,
             infoTag: infoTag,
+            prefix: prefix,
             fileName: fileName,
             line: line,
             funcName: funcName)
@@ -99,6 +102,7 @@ extension TBOLog {
         _ contents: Any...,
         destination: Destination = config.destination,
         infoTag: LogInfoTag = config.infoTag,
+        prefix: String? = config.prefix,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -107,6 +111,7 @@ extension TBOLog {
             contents: contents,
             destination: destination,
             infoTag: infoTag,
+            prefix: prefix,
             fileName: fileName,
             line: line,
             funcName: funcName)
@@ -116,6 +121,7 @@ extension TBOLog {
         _ contents: Any...,
         destination: Destination = config.destination,
         infoTag: LogInfoTag = config.infoTag,
+        prefix: String? = config.prefix,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -124,6 +130,7 @@ extension TBOLog {
             contents: contents,
             destination: destination,
             infoTag: infoTag,
+            prefix: prefix,
             fileName: fileName,
             line: line,
             funcName: funcName)
@@ -133,6 +140,7 @@ extension TBOLog {
         _ contents: Any...,
         destination: Destination = config.destination,
         infoTag: LogInfoTag = config.infoTag,
+        prefix: String? = config.prefix,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -141,6 +149,7 @@ extension TBOLog {
             contents: contents,
             destination: destination,
             infoTag: infoTag,
+            prefix: prefix,
             fileName: fileName,
             line: line,
             funcName: funcName)
@@ -150,6 +159,7 @@ extension TBOLog {
         _ contents: Any...,
         destination: Destination = config.destination,
         infoTag: LogInfoTag = config.infoTag,
+        prefix: String? = config.prefix,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -158,6 +168,7 @@ extension TBOLog {
             contents: contents,
             destination: destination,
             infoTag: infoTag,
+            prefix: prefix,
             fileName: fileName,
             line: line,
             funcName: funcName)
@@ -170,8 +181,9 @@ private extension TBOLog {
     static func log(
         level: Level,
         contents: [Any],
-        destination: Destination = config.destination,
-        infoTag: LogInfoTag = config.infoTag,
+        destination: Destination,
+        infoTag: LogInfoTag,
+        prefix: String?,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -182,6 +194,7 @@ private extension TBOLog {
                 level: level,
                 contents: contents,
                 infoTag: infoTag,
+                prefix: prefix,
                 fileName: fileName,
                 line: line,
                 funcName: funcName)
@@ -191,6 +204,7 @@ private extension TBOLog {
                 level: level,
                 contents: contents,
                 infoTag: infoTag,
+                prefix: prefix,
                 fileName: fileName,
                 line: line,
                 funcName: funcName)
@@ -200,7 +214,8 @@ private extension TBOLog {
     static func console(
         level: Level,
         contents: [Any],
-        infoTag: LogInfoTag = config.infoTag,
+        infoTag: LogInfoTag,
+        prefix: String?,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -212,14 +227,22 @@ private extension TBOLog {
             fileName: fileName,
             line: line,
             funcName: funcName,
-            tempInfoTag: infoTag)
-        print(info.description, parseContent(info.content))
+            tempInfoTag: infoTag,
+            prefix: prefix)
+        
+        if let prefix = info.prefix,
+            prefix.isEmpty == false {
+            print(info.description, prefix, parseContent(info.content))
+        } else {
+            print(info.description, parseContent(info.content))
+        }
     }
     
     static func file(
         level: Level,
         contents: [Any],
-        infoTag: LogInfoTag = config.infoTag,
+        infoTag: LogInfoTag,
+        prefix: String?,
         fileName: String = #file,
         line: Int = #line,
         funcName: String = #function) {
@@ -280,6 +303,7 @@ private extension TBOLog {
             let version = infoDict["CFBundleShortVersionString"] {
             startInfo = "TBOLog Start Success! Version: " + String(describing: version)
                 + " Level: " + config.level.description
+                + " Destination: " + config.destination.description
         } else {
             startInfo = "TBOLog Start Success!"
         }

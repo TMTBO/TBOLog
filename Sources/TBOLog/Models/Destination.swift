@@ -18,4 +18,17 @@ public struct Destination: OptionSet {
     public static let file              = Destination(rawValue: 1 << 1)
     
     public static let all: Destination  = [.console, .file]
+    
+    var description: String {
+        switch self {
+        case .console:
+            return "Console"
+        case .file:
+            return "File(Documents\\\(TBOLog.config.path)"
+        case .all:
+            return "[Console, File(\\\(TBOLog.config.path)]"
+        default:
+            return "Undefined Destination"
+        }
+    }
 }

@@ -28,6 +28,14 @@ class TBOLogSpec: QuickSpec {
                     expect(canLog.isSuccess).to(equal(true))
                 }
                 
+                it("start with prefix") {
+                    var config = StartConfiguration()
+                    config.prefix = ">>>"
+                    canLog = TBOLog.start(config)
+                    TBOLog.i("Start with prefix")
+                    TBOLog.v("Log with prefix", prefix: "*******")
+                }
+                
                 it("fail start") {
                     TBOLog.start(.verbose)
                     canLog = TBOLog.start(.verbose)
@@ -115,6 +123,10 @@ class TBOLogSpec: QuickSpec {
                     queue.async {
                         TBOLog.d("async log")
                     }
+                }
+                
+                it("Log with prefix") {
+                    TBOLog.e("Log with prefix", prefix: "------>")
                 }
             }
         }

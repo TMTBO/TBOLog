@@ -13,7 +13,9 @@ struct LogInfo {
     let fileName: String
     let line: Int
     let funcName: String
+    
     let tempInfoTag: LogInfoTag
+    let prefix: String?
     
     let dateString = TBOLog.formatter.string(from: Date())
     var tname: String {
@@ -91,8 +93,4 @@ public struct LogInfoTag: OptionSet {
     public static let funcName      = LogInfoTag(rawValue: 1 << 5)
     
     public static let full: LogInfoTag  = [.date, .level, .threadName, .fileName, .lineNumber, .funcName]
-    
-    func check(_ infoTag: LogInfoTag) -> Bool {
-        return contains(infoTag)
-    }
 }
