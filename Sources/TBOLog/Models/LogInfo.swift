@@ -10,15 +10,60 @@ import Foundation
 struct LogInfo {
     let level: Level
     let content: [Any]
-    let fileName: String
+    let file: String
     let line: Int
-    let funcName: String
+    let function: String
     
-    let tempInfoTag: LogInfoTag
-    let prefix: String?
+    let tempInfoFlag: LogInfoFlag
+    let tag: String?
     
-    let dateString = TBOLog.formatter.string(from: Date())
+    let dateString = formatter.string(from: Date())
     var tname: String {
+        return threadName()
+    }
+    
+    var description: String {
+        var desc = infoDesc()
+        desc = desc.isEmpty ? "" : desc + ": "
+        if let tag = tag {
+            desc += tag + " "
+        }
+        desc += parseContent(content)
+        
+        return desc
+    }
+    
+    var contentDescription: String {
+        return parseContent(content)
+    }
+    
+    var dictionary: [String: Any] {
+        var dict = [String: Any]()
+        dict["level"] = level.description
+        dict["content"] = content
+        dict["file"] = file
+        dict["line"] = line
+        dict["function"] = function
+        dict["tag"] = tag
+        dict["date"] = dateString
+        dict["tname"] = tname
+        return dict
+    }
+    
+    private static let formatter = DateFormatter()
+}
+
+extension LogInfo {
+    static func prepareLogInfoDateFormat() {
+        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss.SSS"
+    }
+}
+
+// MARK: - Private LogInfo Parse
+
+private extension LogInfo {
+    
+    func threadName() -> String {
         let threadName: String
         if Thread.isMainThread {
             threadName = "main"
@@ -38,59 +83,89 @@ struct LogInfo {
         return threadName
     }
     
-    var description: String {
+    func infoDesc() -> String {
         func appended(desc: inout String,
                       additions: String,
+                      front: String = " ",
                       handler: (() -> String)? = nil) {
-            let front: String
-            if desc.isEmpty {
-                front = ""
-            } else {
-                front = "|"
-            }
+            let front = desc.isEmpty ? "" : front
             desc += front + additions
             desc += handler?() ?? ""
         }
         
-        var desc = tempInfoTag.check(.date) ? (dateString) : ""
-        if tempInfoTag.check(.level) {
-            appended(desc: &desc, additions: level.description)
+        var infoDesc = tempInfoFlag.check(.date) ? (dateString) : ""
+        
+        if tempInfoFlag.check(.file) {
+            appended(desc: &infoDesc, additions: file) { self.tempInfoFlag.check(.lineNumber) ?  ":" + String(self.line) : "" }
         }
         
-        if tempInfoTag.check(.threadName) {
-            appended(desc: &desc, additions: tname)
+        if tempInfoFlag.check(.function) {
+            appended(desc: &infoDesc, additions: function, front: "{") { return "}" }
         }
         
-        if tempInfoTag.check(.fileName) {
-            appended(desc: &desc, additions: fileName) { () -> String in
-                if self.tempInfoTag.check(.lineNumber) {
-                    return ":" + String(self.line)
-                } else {
-                    return ""
-                }
-            }
+        if tempInfoFlag.check(.level) {
+            appended(desc: &infoDesc, additions: level.description)
         }
         
-        if tempInfoTag.check(.funcName) {
-            appended(desc: &desc, additions: "{\(funcName)}")
+        if tempInfoFlag.check(.threadName) {
+            appended(desc: &infoDesc, additions: tname, front: "(") { return ")" }
         }
-        return desc.isEmpty ? "" : desc + ":"
+        return infoDesc
     }
-}
+    
+    func parseContent(_ content: [Any]) -> String {
+        let result = content.map { (item) -> String in
+            let result: String
+            if JSONSerialization.isValidJSONObject(item) {
+                result = parseJsonContent(item)
+            } else {
+                result = parseNotJsonContent(item)
+            }
+            return result
+        }
+        return result.joined(separator: " ")
+    }
+    
+    func parseJsonContent(_ content: Any) -> String {
+        var result: Any = content
+        do {
+            let jsonData = try JSONSerialization.data(
+                withJSONObject: content,
+                options: .prettyPrinted)
+            let json = String(
+                data: jsonData,
+                encoding: .utf8)
+            if let jsonString = json {
+                result = jsonString
+            }
+        } catch {
+            print("TBOLog Error!", error.localizedDescription)
+        }
+        return String(describing: result)
+    }
+    
+    func parseNotJsonContent(_ content: Any) -> String {
+        let contentString = String(describing: content)
+        return contentString
+    }
+} /** LogInfo */
 
-public struct LogInfoTag: OptionSet {
+// MARK: - LogInfoFlag
+
+public struct LogInfoFlag: OptionSet {
     public let rawValue: Int
     
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
     
-    public static let date          = LogInfoTag(rawValue: 1 << 0)
-    public static let level         = LogInfoTag(rawValue: 1 << 1)
-    public static let threadName         = LogInfoTag(rawValue: 1 << 2)
-    public static let fileName      = LogInfoTag(rawValue: 1 << 3)
-    public static let lineNumber    = LogInfoTag(rawValue: 1 << 4)
-    public static let funcName      = LogInfoTag(rawValue: 1 << 5)
+    public static let date          = LogInfoFlag(rawValue: 1 << 0)
+    public static let time          = LogInfoFlag(rawValue: 1 << 1)
+    public static let level         = LogInfoFlag(rawValue: 1 << 2)
+    public static let threadName    = LogInfoFlag(rawValue: 1 << 3)
+    public static let file          = LogInfoFlag(rawValue: 1 << 4)
+    public static let lineNumber    = LogInfoFlag(rawValue: 1 << 5)
+    public static let function      = LogInfoFlag(rawValue: 1 << 6)
     
-    public static let full: LogInfoTag  = [.date, .level, .threadName, .fileName, .lineNumber, .funcName]
-}
+    public static let full: LogInfoFlag  = [.date, .time, .level, .threadName, .file, .lineNumber, .function]
+} /** LogInfoFlag */

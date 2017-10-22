@@ -15,7 +15,8 @@ public struct Destination: OptionSet {
     }
     
     public static let console           = Destination(rawValue: 1 << 0)
-    public static let file              = Destination(rawValue: 1 << 1)
+    public static let appleSystemLog    = Destination(rawValue: 1 << 1)
+    public static let file              = Destination(rawValue: 1 << 2)
     
     public static let all: Destination  = [.console, .file]
     
@@ -23,12 +24,28 @@ public struct Destination: OptionSet {
         switch self {
         case .console:
             return "Console"
+        case .appleSystemLog:
+            return "AppleSystemLog"
         case .file:
             return "File(Documents\\\(TBOLog.config.path)"
         case .all:
-            return "[Console, File(\\\(TBOLog.config.path)]"
+            return "[Console, AppleSystemLog, File(\\\(TBOLog.config.path)]"
         default:
             return "Undefined Destination"
         }
+    }
+    
+    func getLoggers() -> [BaseLogger] {
+        var loggers = [BaseLogger]()
+        if contains(.console) {
+            loggers.append(ConsoleLogger.shared)
+        }
+        if contains(.appleSystemLog) {
+            loggers.append(ASLLogger.shared)
+        }
+        if contains(.file) {
+            
+        }
+        return loggers
     }
 }

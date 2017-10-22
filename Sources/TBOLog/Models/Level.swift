@@ -31,4 +31,8 @@ public enum Level: UInt {
             return "None"
         }
     }
+    
+    var canWork: Bool {
+        return self.rawValue >= TBOLog.config.level.rawValue
+    }
 }

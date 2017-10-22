@@ -7,20 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7938C9401F84B07C007A35C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C93F1F84B07C007A35C4 /* AppDelegate.m */; };
-		7938C9431F84B07C007A35C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C9421F84B07C007A35C4 /* ViewController.m */; };
-		7938C9461F84B07C007A35C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7938C9441F84B07C007A35C4 /* Main.storyboard */; };
-		7938C9481F84B07C007A35C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7938C9471F84B07C007A35C4 /* Assets.xcassets */; };
-		7938C94B1F84B07C007A35C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7938C9491F84B07C007A35C4 /* LaunchScreen.storyboard */; };
-		7938C94E1F84B07C007A35C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C94D1F84B07C007A35C4 /* main.m */; };
-		7938C95A1F84B091007A35C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C9591F84B091007A35C4 /* AppDelegate.m */; };
-		7938C95D1F84B091007A35C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C95C1F84B091007A35C4 /* ViewController.m */; };
-		7938C95F1F84B091007A35C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7938C95E1F84B091007A35C4 /* Assets.xcassets */; };
-		7938C9621F84B091007A35C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7938C9601F84B091007A35C4 /* Main.storyboard */; };
-		7938C9651F84B091007A35C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7938C9641F84B091007A35C4 /* main.m */; };
-		7938C96B1F84B2F0007A35C4 /* TBOLog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7938C96A1F84B2EF007A35C4 /* TBOLog.podspec */; };
-		98621E044FAF0876BFFE1C7E /* Pods_TBOLog_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295FA95C2C3B76A921866A2 /* Pods_TBOLog_macOS.framework */; };
-		BF05F21FC7FF6C62E3E8415C /* Pods_TBOLog_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374C55BE6529DCBF7050184F /* Pods_TBOLog_iOS.framework */; };
+		0D238D9E1C8FD1E8FBE43061 /* Pods_TBOLog_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C295FA95C2C3B76A921866A2 /* Pods_TBOLog_macOS.framework */; };
+		3945974D2FFA5A3F83F4A380 /* Pods_TBOLog_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374C55BE6529DCBF7050184F /* Pods_TBOLog_iOS.framework */; };
+		79835F401F9240AD0015B36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79835F3F1F9240AD0015B36B /* AppDelegate.swift */; };
+		79835F421F9240AD0015B36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79835F411F9240AD0015B36B /* ViewController.swift */; };
+		79835F441F9240AD0015B36B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79835F431F9240AD0015B36B /* Assets.xcassets */; };
+		79835F471F9240AD0015B36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79835F451F9240AD0015B36B /* Main.storyboard */; };
+		79835F541F9240C50015B36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79835F531F9240C50015B36B /* AppDelegate.swift */; };
+		79835F561F9240C50015B36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79835F551F9240C50015B36B /* ViewController.swift */; };
+		79835F591F9240C50015B36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79835F571F9240C50015B36B /* Main.storyboard */; };
+		79835F5B1F9240C50015B36B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79835F5A1F9240C50015B36B /* Assets.xcassets */; };
+		79835F5E1F9240C50015B36B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79835F5C1F9240C50015B36B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,30 +28,24 @@
 		3D450E1B7CECF564D603EA5D /* Pods-TBOLoger_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBOLoger_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBOLoger_iOS/Pods-TBOLoger_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5366F7857A140B75AE19733F /* Pods-TBOLog_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBOLog_macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBOLog_macOS/Pods-TBOLog_macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E401861F44ECFECB43851 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7938C93C1F84B07C007A35C4 /* TBOLog_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBOLog_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7938C93E1F84B07C007A35C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7938C93F1F84B07C007A35C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7938C9411F84B07C007A35C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7938C9421F84B07C007A35C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7938C9451F84B07C007A35C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7938C9471F84B07C007A35C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7938C94A1F84B07C007A35C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7938C94C1F84B07C007A35C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7938C94D1F84B07C007A35C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7938C9561F84B091007A35C4 /* TBOLog_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBOLog_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7938C9581F84B091007A35C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7938C9591F84B091007A35C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7938C95B1F84B091007A35C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7938C95C1F84B091007A35C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7938C95E1F84B091007A35C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7938C9611F84B091007A35C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7938C9631F84B091007A35C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7938C9641F84B091007A35C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7938C9661F84B091007A35C4 /* TBOLog_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TBOLog_macOS.entitlements; sourceTree = "<group>"; };
 		7938C96A1F84B2EF007A35C4 /* TBOLog.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TBOLog.podspec; path = ../TBOLog.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		795E6E501F83CD1E00A45FC7 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		795E6E511F83CD1E00A45FC7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		795E6E901F84A96500A45FC7 /* liblog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblog.a; path = ../Sources/XLoger/liblog.a; sourceTree = "<group>"; };
+		79835F3D1F9240AD0015B36B /* TBOLog_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBOLog_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79835F3F1F9240AD0015B36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79835F411F9240AD0015B36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79835F431F9240AD0015B36B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79835F461F9240AD0015B36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79835F481F9240AD0015B36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79835F491F9240AD0015B36B /* TBOLog_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TBOLog_macOS.entitlements; sourceTree = "<group>"; };
+		79835F511F9240C50015B36B /* TBOLog_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBOLog_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79835F531F9240C50015B36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79835F551F9240C50015B36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79835F581F9240C50015B36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79835F5A1F9240C50015B36B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79835F5D1F9240C50015B36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79835F5F1F9240C50015B36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B19468942A214DA9405230B /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9D9476BFCAA8A4750D5799 /* Pods-TBOLog_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBOLog_macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBOLog_macOS/Pods-TBOLog_macOS.release.xcconfig"; sourceTree = "<group>"; };
 		8AB2AAF1C6481F26D59DB76D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,19 +57,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7938C9391F84B07C007A35C4 /* Frameworks */ = {
+		79835F3A1F9240AD0015B36B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF05F21FC7FF6C62E3E8415C /* Pods_TBOLog_iOS.framework in Frameworks */,
+				0D238D9E1C8FD1E8FBE43061 /* Pods_TBOLog_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7938C9531F84B091007A35C4 /* Frameworks */ = {
+		79835F4E1F9240C50015B36B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98621E044FAF0876BFFE1C7E /* Pods_TBOLog_macOS.framework in Frameworks */,
+				3945974D2FFA5A3F83F4A380 /* Pods_TBOLog_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,44 +106,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7938C93D1F84B07C007A35C4 /* TBOLog_iOS */ = {
-			isa = PBXGroup;
-			children = (
-				7938C93E1F84B07C007A35C4 /* AppDelegate.h */,
-				7938C93F1F84B07C007A35C4 /* AppDelegate.m */,
-				7938C9411F84B07C007A35C4 /* ViewController.h */,
-				7938C9421F84B07C007A35C4 /* ViewController.m */,
-				7938C9441F84B07C007A35C4 /* Main.storyboard */,
-				7938C9471F84B07C007A35C4 /* Assets.xcassets */,
-				7938C9491F84B07C007A35C4 /* LaunchScreen.storyboard */,
-				7938C94C1F84B07C007A35C4 /* Info.plist */,
-				7938C94D1F84B07C007A35C4 /* main.m */,
-			);
-			path = TBOLog_iOS;
-			sourceTree = "<group>";
-		};
-		7938C9571F84B091007A35C4 /* TBOLog_macOS */ = {
-			isa = PBXGroup;
-			children = (
-				7938C9581F84B091007A35C4 /* AppDelegate.h */,
-				7938C9591F84B091007A35C4 /* AppDelegate.m */,
-				7938C95B1F84B091007A35C4 /* ViewController.h */,
-				7938C95C1F84B091007A35C4 /* ViewController.m */,
-				7938C95E1F84B091007A35C4 /* Assets.xcassets */,
-				7938C9601F84B091007A35C4 /* Main.storyboard */,
-				7938C9631F84B091007A35C4 /* Info.plist */,
-				7938C9641F84B091007A35C4 /* main.m */,
-				7938C9661F84B091007A35C4 /* TBOLog_macOS.entitlements */,
-			);
-			path = TBOLog_macOS;
-			sourceTree = "<group>";
-		};
 		795E6E341F83A01F00A45FC7 = {
 			isa = PBXGroup;
 			children = (
 				795E6E561F83CD2D00A45FC7 /* Support Files */,
-				7938C93D1F84B07C007A35C4 /* TBOLog_iOS */,
-				7938C9571F84B091007A35C4 /* TBOLog_macOS */,
+				79835F3E1F9240AD0015B36B /* TBOLog_macOS */,
+				79835F521F9240C50015B36B /* TBOLog_iOS */,
 				795E6E3E1F83A01F00A45FC7 /* Products */,
 				535435AC21E932B247ADD339 /* Pods */,
 				03DA431462FE2B5407036055 /* Frameworks */,
@@ -162,8 +121,8 @@
 		795E6E3E1F83A01F00A45FC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7938C93C1F84B07C007A35C4 /* TBOLog_iOS.app */,
-				7938C9561F84B091007A35C4 /* TBOLog_macOS.app */,
+				79835F3D1F9240AD0015B36B /* TBOLog_macOS.app */,
+				79835F511F9240C50015B36B /* TBOLog_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,39 +137,45 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		79835F3E1F9240AD0015B36B /* TBOLog_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				79835F3F1F9240AD0015B36B /* AppDelegate.swift */,
+				79835F411F9240AD0015B36B /* ViewController.swift */,
+				79835F431F9240AD0015B36B /* Assets.xcassets */,
+				79835F451F9240AD0015B36B /* Main.storyboard */,
+				79835F481F9240AD0015B36B /* Info.plist */,
+				79835F491F9240AD0015B36B /* TBOLog_macOS.entitlements */,
+			);
+			path = TBOLog_macOS;
+			sourceTree = "<group>";
+		};
+		79835F521F9240C50015B36B /* TBOLog_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				79835F531F9240C50015B36B /* AppDelegate.swift */,
+				79835F551F9240C50015B36B /* ViewController.swift */,
+				79835F571F9240C50015B36B /* Main.storyboard */,
+				79835F5A1F9240C50015B36B /* Assets.xcassets */,
+				79835F5C1F9240C50015B36B /* LaunchScreen.storyboard */,
+				79835F5F1F9240C50015B36B /* Info.plist */,
+			);
+			path = TBOLog_iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7938C93B1F84B07C007A35C4 /* TBOLog_iOS */ = {
+		79835F3C1F9240AD0015B36B /* TBOLog_macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7938C94F1F84B07C007A35C4 /* Build configuration list for PBXNativeTarget "TBOLog_iOS" */;
+			buildConfigurationList = 79835F4A1F9240AD0015B36B /* Build configuration list for PBXNativeTarget "TBOLog_macOS" */;
 			buildPhases = (
-				047F32715901CED80A98FC7F /* [CP] Check Pods Manifest.lock */,
-				7938C9381F84B07C007A35C4 /* Sources */,
-				7938C9391F84B07C007A35C4 /* Frameworks */,
-				7938C93A1F84B07C007A35C4 /* Resources */,
-				31CF1660D713D05F68A1295D /* [CP] Embed Pods Frameworks */,
-				909A186C61E13BA6D3E7A068 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TBOLog_iOS;
-			productName = TBOLog_iOS;
-			productReference = 7938C93C1F84B07C007A35C4 /* TBOLog_iOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		7938C9551F84B091007A35C4 /* TBOLog_macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7938C9671F84B091007A35C4 /* Build configuration list for PBXNativeTarget "TBOLog_macOS" */;
-			buildPhases = (
-				082DF2DB8846778B6BF77048 /* [CP] Check Pods Manifest.lock */,
-				7938C9521F84B091007A35C4 /* Sources */,
-				7938C9531F84B091007A35C4 /* Frameworks */,
-				7938C9541F84B091007A35C4 /* Resources */,
-				6A0236978ED0E3D061C18963 /* [CP] Embed Pods Frameworks */,
-				1400A41114C37E0A8038ED49 /* [CP] Copy Pods Resources */,
+				B56885F8B6C44617CF14F267 /* [CP] Check Pods Manifest.lock */,
+				79835F391F9240AD0015B36B /* Sources */,
+				79835F3A1F9240AD0015B36B /* Frameworks */,
+				79835F3B1F9240AD0015B36B /* Resources */,
+				FDCFA5AA0CAE8720712A9566 /* [CP] Embed Pods Frameworks */,
+				9A06533EC849A4684772421B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,7 +183,27 @@
 			);
 			name = TBOLog_macOS;
 			productName = TBOLog_macOS;
-			productReference = 7938C9561F84B091007A35C4 /* TBOLog_macOS.app */;
+			productReference = 79835F3D1F9240AD0015B36B /* TBOLog_macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79835F501F9240C50015B36B /* TBOLog_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79835F601F9240C50015B36B /* Build configuration list for PBXNativeTarget "TBOLog_iOS" */;
+			buildPhases = (
+				D95A8D67FE10A0856B597B08 /* [CP] Check Pods Manifest.lock */,
+				79835F4D1F9240C50015B36B /* Sources */,
+				79835F4E1F9240C50015B36B /* Frameworks */,
+				79835F4F1F9240C50015B36B /* Resources */,
+				A9FB860CE0952542CEC0E47E /* [CP] Embed Pods Frameworks */,
+				B9FCB5B2ECA114AE5ACFF562 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TBOLog_iOS;
+			productName = TBOLog_iOS;
+			productReference = 79835F511F9240C50015B36B /* TBOLog_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,11 +216,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = TobyoTenma;
 				TargetAttributes = {
-					7938C93B1F84B07C007A35C4 = {
+					79835F3C1F9240AD0015B36B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
-					7938C9551F84B091007A35C4 = {
+					79835F501F9240C50015B36B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -254,73 +239,36 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7938C93B1F84B07C007A35C4 /* TBOLog_iOS */,
-				7938C9551F84B091007A35C4 /* TBOLog_macOS */,
+				79835F3C1F9240AD0015B36B /* TBOLog_macOS */,
+				79835F501F9240C50015B36B /* TBOLog_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7938C93A1F84B07C007A35C4 /* Resources */ = {
+		79835F3B1F9240AD0015B36B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7938C94B1F84B07C007A35C4 /* LaunchScreen.storyboard in Resources */,
-				7938C96B1F84B2F0007A35C4 /* TBOLog.podspec in Resources */,
-				7938C9481F84B07C007A35C4 /* Assets.xcassets in Resources */,
-				7938C9461F84B07C007A35C4 /* Main.storyboard in Resources */,
+				79835F441F9240AD0015B36B /* Assets.xcassets in Resources */,
+				79835F471F9240AD0015B36B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7938C9541F84B091007A35C4 /* Resources */ = {
+		79835F4F1F9240C50015B36B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7938C95F1F84B091007A35C4 /* Assets.xcassets in Resources */,
-				7938C9621F84B091007A35C4 /* Main.storyboard in Resources */,
+				79835F5E1F9240C50015B36B /* LaunchScreen.storyboard in Resources */,
+				79835F5B1F9240C50015B36B /* Assets.xcassets in Resources */,
+				79835F591F9240C50015B36B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		047F32715901CED80A98FC7F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TBOLog_iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		082DF2DB8846778B6BF77048 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TBOLog_macOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1400A41114C37E0A8038ED49 /* [CP] Copy Pods Resources */ = {
+		9A06533EC849A4684772421B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,7 +283,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBOLog_macOS/Pods-TBOLog_macOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31CF1660D713D05F68A1295D /* [CP] Embed Pods Frameworks */ = {
+		A9FB860CE0952542CEC0E47E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,7 +301,58 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBOLog_iOS/Pods-TBOLog_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A0236978ED0E3D061C18963 /* [CP] Embed Pods Frameworks */ = {
+		B56885F8B6C44617CF14F267 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TBOLog_macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9FCB5B2ECA114AE5ACFF562 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBOLog_iOS/Pods-TBOLog_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95A8D67FE10A0856B597B08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TBOLog_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDCFA5AA0CAE8720712A9566 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,143 +370,57 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBOLog_macOS/Pods-TBOLog_macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		909A186C61E13BA6D3E7A068 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBOLog_iOS/Pods-TBOLog_iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7938C9381F84B07C007A35C4 /* Sources */ = {
+		79835F391F9240AD0015B36B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7938C9431F84B07C007A35C4 /* ViewController.m in Sources */,
-				7938C94E1F84B07C007A35C4 /* main.m in Sources */,
-				7938C9401F84B07C007A35C4 /* AppDelegate.m in Sources */,
+				79835F421F9240AD0015B36B /* ViewController.swift in Sources */,
+				79835F401F9240AD0015B36B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7938C9521F84B091007A35C4 /* Sources */ = {
+		79835F4D1F9240C50015B36B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7938C95D1F84B091007A35C4 /* ViewController.m in Sources */,
-				7938C9651F84B091007A35C4 /* main.m in Sources */,
-				7938C95A1F84B091007A35C4 /* AppDelegate.m in Sources */,
+				79835F561F9240C50015B36B /* ViewController.swift in Sources */,
+				79835F541F9240C50015B36B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7938C9441F84B07C007A35C4 /* Main.storyboard */ = {
+		79835F451F9240AD0015B36B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7938C9451F84B07C007A35C4 /* Base */,
+				79835F461F9240AD0015B36B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7938C9491F84B07C007A35C4 /* LaunchScreen.storyboard */ = {
+		79835F571F9240C50015B36B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7938C94A1F84B07C007A35C4 /* Base */,
+				79835F581F9240C50015B36B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		79835F5C1F9240C50015B36B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79835F5D1F9240C50015B36B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		7938C9601F84B091007A35C4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7938C9611F84B091007A35C4 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7938C9501F84B07C007A35C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CB048C161878B3682258035 /* Pods-TBOLog_iOS.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VY3QK58G7F;
-				INFOPLIST_FILE = TBOLog_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7938C9511F84B07C007A35C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E65A57FC517BDBD836E9056C /* Pods-TBOLog_iOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VY3QK58G7F;
-				INFOPLIST_FILE = TBOLog_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7938C9681F84B091007A35C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5366F7857A140B75AE19733F /* Pods-TBOLog_macOS.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TBOLog_macOS/TBOLog_macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VY3QK58G7F;
-				INFOPLIST_FILE = TBOLog_macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		7938C9691F84B091007A35C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E9D9476BFCAA8A4750D5799 /* Pods-TBOLog_macOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TBOLog_macOS/TBOLog_macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VY3QK58G7F;
-				INFOPLIST_FILE = TBOLog_macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		795E6E4B1F83A01F00A45FC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -614,32 +527,105 @@
 			};
 			name = Release;
 		};
+		79835F4B1F9240AD0015B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5366F7857A140B75AE19733F /* Pods-TBOLog_macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TBOLog_macOS/TBOLog_macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VY3QK58G7F;
+				INFOPLIST_FILE = TBOLog_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		79835F4C1F9240AD0015B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9D9476BFCAA8A4750D5799 /* Pods-TBOLog_macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TBOLog_macOS/TBOLog_macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VY3QK58G7F;
+				INFOPLIST_FILE = TBOLog_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		79835F611F9240C50015B36B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB048C161878B3682258035 /* Pods-TBOLog_iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VY3QK58G7F;
+				INFOPLIST_FILE = TBOLog_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79835F621F9240C50015B36B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65A57FC517BDBD836E9056C /* Pods-TBOLog_iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VY3QK58G7F;
+				INFOPLIST_FILE = TBOLog_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "top.tobyotenma.www.TBOLog-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7938C94F1F84B07C007A35C4 /* Build configuration list for PBXNativeTarget "TBOLog_iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7938C9501F84B07C007A35C4 /* Debug */,
-				7938C9511F84B07C007A35C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7938C9671F84B091007A35C4 /* Build configuration list for PBXNativeTarget "TBOLog_macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7938C9681F84B091007A35C4 /* Debug */,
-				7938C9691F84B091007A35C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		795E6E381F83A01F00A45FC7 /* Build configuration list for PBXProject "TBOLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				795E6E4B1F83A01F00A45FC7 /* Debug */,
 				795E6E4C1F83A01F00A45FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79835F4A1F9240AD0015B36B /* Build configuration list for PBXNativeTarget "TBOLog_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79835F4B1F9240AD0015B36B /* Debug */,
+				79835F4C1F9240AD0015B36B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79835F601F9240C50015B36B /* Build configuration list for PBXNativeTarget "TBOLog_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79835F611F9240C50015B36B /* Debug */,
+				79835F621F9240C50015B36B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

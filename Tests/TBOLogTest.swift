@@ -20,20 +20,21 @@ class TBOLogSpec: QuickSpec {
                     let config = StartConfiguration(
                         level: .verbose,
                         destination: .console,
-                        infoTag: .full,
-                        path: "TBOLog", prefix: nil)
+                        flag: .full,
+                        path: "TBOLog",
+                        tag: nil,
+                        isAsynchronously: true)
                     canLog = TBOLog.start(config)
                     TBOLog.i("Start with config")
-                    TBOLog.d("Start with config", infoTag: .level)
+                    TBOLog.d("Start with config", flag: .level)
                     expect(canLog.isSuccess).to(equal(true))
                 }
                 
-                it("start with prefix") {
+                it("start with tag") {
                     var config = StartConfiguration()
-                    config.prefix = ">>>"
+                    config.tag = ">>>"
                     canLog = TBOLog.start(config)
-                    TBOLog.i("Start with prefix")
-                    TBOLog.v("Log with prefix", prefix: "*******")
+                    TBOLog.i("Start with tag")
                 }
                 
                 it("fail start") {
@@ -45,7 +46,7 @@ class TBOLogSpec: QuickSpec {
             
             describe("Log content") {
                 beforeEach {
-                    let canLog = TBOLog.start(.verbose)
+                    let canLog = TBOLog.start(.debug)
                     expect(canLog.isSuccess).to(equal(true))
                 }
                 it("Log items") {
@@ -125,8 +126,8 @@ class TBOLogSpec: QuickSpec {
                     }
                 }
                 
-                it("Log with prefix") {
-                    TBOLog.e("Log with prefix", prefix: "------>")
+                it("Log with tag") {
+                    TBOLog.e("Log with tag", tag: "------>")
                 }
             }
         }

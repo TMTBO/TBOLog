@@ -15,7 +15,8 @@ public struct StartResult {
 public struct StartConfiguration {
     public var level: Level = .verbose
     public var destination: Destination = .console
-    public var infoTag: LogInfoTag = .full
+    public var flag: LogInfoFlag = .full
     public var path: String = "TBOLog"
-    public var prefix: String? = nil
+    public var tag: String? = nil
+    public var isAsynchronously = true
 }
