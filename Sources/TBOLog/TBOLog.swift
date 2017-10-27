@@ -87,7 +87,7 @@ extension TBOLog {
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
         line: Int = #line,
-        funcion: String = #function) {
+        function: String = #function) {
         log(level:.verbose,
             contents: contents,
             tag: tag,
@@ -96,7 +96,7 @@ extension TBOLog {
             isAsynchronously: isAsynchronously,
             file: file,
             line: line,
-            function: funcion)
+            function: function)
     }
     
     public static func d(_ contents: Any...,
@@ -106,7 +106,7 @@ extension TBOLog {
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
         line: Int = #line,
-        funcion: String = #function) {
+        function: String = #function) {
         log(level:.debug,
             contents: contents,
             tag: tag,
@@ -115,8 +115,9 @@ extension TBOLog {
             isAsynchronously: isAsynchronously,
             file: file,
             line: line,
-            function: funcion)
+            function: function)
     }
+    
     public static func i(_ contents: Any...,
         tag: String? = config.tag,
         destination: Destination = config.destination,
@@ -124,7 +125,7 @@ extension TBOLog {
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
         line: Int = #line,
-        funcion: String = #function) {
+        function: String = #function) {
         log(level:.info,
             contents: contents,
             tag: tag,
@@ -133,7 +134,7 @@ extension TBOLog {
             isAsynchronously: isAsynchronously,
             file: file,
             line: line,
-            function: funcion)
+            function: function)
     }
     public static func w(_ contents: Any...,
         tag: String? = config.tag,
@@ -142,7 +143,7 @@ extension TBOLog {
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
         line: Int = #line,
-        funcion: String = #function) {
+        function: String = #function) {
         log(level:.warning,
             contents: contents,
             tag: tag,
@@ -151,7 +152,7 @@ extension TBOLog {
             isAsynchronously: isAsynchronously,
             file: file,
             line: line,
-            function: funcion)
+            function: function)
     }
     public static func e(_ contents: Any...,
         tag: String? = config.tag,
@@ -160,7 +161,7 @@ extension TBOLog {
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
         line: Int = #line,
-        funcion: String = #function) {
+        function: String = #function) {
         log(level:.error,
             contents: contents,
             tag: tag,
@@ -169,7 +170,7 @@ extension TBOLog {
             isAsynchronously: isAsynchronously,
             file: file,
             line: line,
-            function: funcion)
+            function: function)
     }
 }
 
