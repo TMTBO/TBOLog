@@ -14,8 +14,7 @@ Pod::Spec.new do |s|
     s.osx.deployment_target = "10.10"
     s.source       = { :git => "https://github.com/TMTBO/TBOLog.git", :tag => "#{s.version}" }
     s.source_files  = "Sources/TBOLog/**/*"
-    #s.vendored_libraries = "Sources/XLoger/**/*"
-    
+
     s.test_spec "Tests" do |ts|
         ts.source_files = "Tests/*.swift"
         ts.dependency 'Quick'
