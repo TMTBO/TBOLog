@@ -9,7 +9,7 @@ import Foundation
 import asl
 import os.log
 
-class ASLLogger: BaseLogger {
+class ASLLogger: QueueLogger {
     
     static let shared = ASLLogger()
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ConsoleLogger: BaseLogger {
+class ConsoleLogger: QueueLogger {
     
     static let shared = ConsoleLogger()
     

@@ -35,8 +35,8 @@ public struct Destination: OptionSet {
         }
     }
     
-    func getLoggers() -> [BaseLogger] {
-        var loggers = [BaseLogger]()
+    func getLoggers() -> [QueueLogger] {
+        var loggers = [QueueLogger]()
         if contains(.console) {
             loggers.append(ConsoleLogger.shared)
         }

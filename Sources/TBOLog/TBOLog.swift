@@ -10,7 +10,6 @@ import Foundation
 public struct TBOLog {
     private static var on = false
     public private(set) static var config: StartConfiguration = StartConfiguration()
-    private static let logQueue = DispatchQueue(label: "tbolog.logqueue")
     private static var isWorking: Bool {
         return on
     }
@@ -207,17 +206,12 @@ private extension TBOLog {
                            tag: tag)
         dispatchLog(info, to: loggers, isAsynchronously: isAsynchronously)
     }
-    
+
     static func dispatchLog(_ info: LogInfo,
-                            to loggers: [BaseLogger],
-                            isAsynchronously: Bool = config.isAsynchronously) {
-        let workItem = DispatchWorkItem {
-            _ = loggers.map { $0.write(_: info) }
-        }
-        if isAsynchronously {
-            logQueue.async(execute: workItem)
-        } else {
-            logQueue.sync(execute: workItem)
+                     to loggers: [QueueLogger],
+                     isAsynchronously: Bool = TBOLog.config.isAsynchronously) {
+        _ = loggers.map {
+            $0.flush(info, isAsynchronously: isAsynchronously)
         }
     }
 }
