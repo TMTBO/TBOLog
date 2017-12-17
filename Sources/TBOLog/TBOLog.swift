@@ -15,7 +15,7 @@ public struct TBOLog {
     }
 }
 
-// MARK: - Public Methods
+// MARK: - Start Loger
 
 extension TBOLog {
     
@@ -77,6 +77,18 @@ extension TBOLog {
         return result
     }
 }
+
+// MARK: - Add File Destination
+
+extension TBOLog {
+    // add remove change edit
+    // setup loggers
+//    public static func add(fileDestination: FileLogger) {
+//
+//    }
+}
+
+// MARK: - Output Log
 
 extension TBOLog {
     public static func v(_ contents: Any...,
