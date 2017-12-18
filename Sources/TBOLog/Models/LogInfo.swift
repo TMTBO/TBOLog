@@ -17,11 +17,9 @@ struct LogInfo {
     let tempInfoFlag: LogInfoFlag
     let tag: String?
     
-    let dateString = formatter.string(from: Date())
-    var tname: String {
-        return threadName()
-    }
-    
+    let dateString: String
+    let tname: String
+
     var description: String {
         var desc = infoDesc()
         desc = desc.isEmpty ? "" : desc + ": "
@@ -51,6 +49,24 @@ struct LogInfo {
     }
     
     private static let formatter = DateFormatter()
+
+    init(level: Level,
+         content: [Any],
+         file: String,
+         line: Int,
+         function: String,
+         tempInfoFlag: LogInfoFlag,
+         tag: String?) {
+        self.level = level
+        self.content = content
+        self.file = file
+        self.line = line
+        self.function = function
+        self.tempInfoFlag = tempInfoFlag
+        self.tag = tag
+        self.dateString = type(of: self).formatter.string(from: Date())
+        self.tname = type(of: self).threadName()
+    }
 }
 
 extension LogInfo {
@@ -63,7 +79,7 @@ extension LogInfo {
 
 private extension LogInfo {
     
-    func threadName() -> String {
+    static func threadName() -> String {
         let threadName: String
         if Thread.isMainThread {
             threadName = "main"
