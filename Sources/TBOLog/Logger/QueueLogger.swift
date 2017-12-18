@@ -4,12 +4,10 @@
 
 import Foundation
 
-class QueueLogger: BaseLogger {
+open class QueueLogger: BaseLogger {
 	private let logQueue = DispatchQueue(label: "tbolog.logqueue")
-}
 
-extension QueueLogger {
-
+	override
 	func flush(_ info: LogInfo, isAsynchronously: Bool) {
 		let workItem: DispatchWorkItem = DispatchWorkItem {
 			self.write(_: info)

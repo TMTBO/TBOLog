@@ -19,7 +19,7 @@ class TBOLogSpec: QuickSpec {
                 it("start with config") {
                     let config = StartConfiguration(
                         level: .verbose,
-                        destination: .console,
+                        loggers: [ConsoleLogger.default],
                         flag: .full,
                         path: "TBOLog",
                         tag: nil,

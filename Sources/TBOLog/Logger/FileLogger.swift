@@ -4,7 +4,7 @@
 
 import Foundation
 
-class FileLogger: QueueLogger {
+open class FileLogger: QueueLogger {
 
 	var fileHandler: FileHandle? = nil
 	var fileURL: URL? = nil

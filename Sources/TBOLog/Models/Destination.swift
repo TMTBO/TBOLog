@@ -38,10 +38,10 @@ public struct Destination: OptionSet {
     func getLoggers() -> [QueueLogger] {
         var loggers = [QueueLogger]()
         if contains(.console) {
-            loggers.append(ConsoleLogger.shared)
+//            loggers.append(ConsoleLogger.shared)
         }
         if contains(.appleSystemLog) {
-            loggers.append(ASLLogger.shared)
+//            loggers.append(ASLLogger.shared)
         }
         if contains(.file) {
             

@@ -9,9 +9,9 @@ import Foundation
 import asl
 import os.log
 
-class ASLLogger: QueueLogger {
+public class ASLLogger: QueueLogger {
     
-    static let shared = ASLLogger()
+    public static let `default` = ASLLogger()
     
     private var log: OSLog! = nil
     private var client: aslclient! = nil
@@ -19,13 +19,13 @@ class ASLLogger: QueueLogger {
     private let subsystem = "com.apple.console"
     private let category = "TBOLog"
     
-    override private init() {
+    override private init(identifier: String = "default-asl-logger") {
         if #available(OSX 10.12, iOS 10.0, *) {
             log = OSLog(subsystem: subsystem, category: category)
         } else {
             client = asl_open(nil, subsystem, UInt32(ASL_OPT_STDERR))
         }
-        super.init()
+        super.init(identifier: identifier)
     }
     
     override func write(_ info: LogInfo) {

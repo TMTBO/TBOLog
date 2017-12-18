@@ -22,14 +22,14 @@ extension TBOLog {
     @discardableResult
     public static func start(
         _ level: Level,
-        destination: Destination = .console,
+        loggers: [BaseLogger] = [ConsoleLogger.default],
         infoTag: LogInfoFlag = .full,
         path: String = "TBOLog",
         isAsynchronously: Bool = config.isAsynchronously,
         tag: String? = nil) -> StartResult {
         config = StartConfiguration()
         config.level = level
-        config.destination = destination
+        config.loggers = loggers
         config.flag = infoTag
         config.path = path
         config.tag = tag
@@ -78,14 +78,26 @@ extension TBOLog {
     }
 }
 
-// MARK: - Add File Destination
+// MARK: - Logger Operation
 
 extension TBOLog {
-    // add remove change edit
-    // setup loggers
-//    public static func add(fileDestination: FileLogger) {
-//
-//    }
+    // add
+    public static func append(logger: BaseLogger) {
+        config.append(logger: logger)
+    }
+
+    // remove
+    public static func remove(logger: BaseLogger) {
+        config.remove(logger: logger)
+    }
+    // edit
+    public static func replace(identifier: String, with logger: BaseLogger) {
+
+    }
+    // query
+    public static func logger(identifier: String) -> BaseLogger {
+        return config.logger(identifier: identifier)!
+    }
 }
 
 // MARK: - Output Log
@@ -93,7 +105,7 @@ extension TBOLog {
 extension TBOLog {
     public static func v(_ contents: Any...,
         tag: String? = config.tag,
-        destination: Destination = config.destination,
+        loggers: [BaseLogger] = config.loggers,
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -102,7 +114,7 @@ extension TBOLog {
         log(level:.verbose,
             contents: contents,
             tag: tag,
-            destination: destination,
+            loggers: loggers,
             flag: flag,
             isAsynchronously: isAsynchronously,
             file: file,
@@ -112,7 +124,7 @@ extension TBOLog {
     
     public static func d(_ contents: Any...,
         tag: String? = config.tag,
-        destination: Destination = config.destination,
+        loggers: [BaseLogger] = config.loggers,
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -121,7 +133,7 @@ extension TBOLog {
         log(level:.debug,
             contents: contents,
             tag: tag,
-            destination: destination,
+            loggers: loggers,
             flag: flag,
             isAsynchronously: isAsynchronously,
             file: file,
@@ -131,7 +143,7 @@ extension TBOLog {
     
     public static func i(_ contents: Any...,
         tag: String? = config.tag,
-        destination: Destination = config.destination,
+        loggers: [BaseLogger] = config.loggers,
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -140,7 +152,7 @@ extension TBOLog {
         log(level:.info,
             contents: contents,
             tag: tag,
-            destination: destination,
+            loggers: loggers,
             flag: flag,
             isAsynchronously: isAsynchronously,
             file: file,
@@ -149,7 +161,7 @@ extension TBOLog {
     }
     public static func w(_ contents: Any...,
         tag: String? = config.tag,
-        destination: Destination = config.destination,
+        loggers: [BaseLogger] = config.loggers,
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -158,7 +170,7 @@ extension TBOLog {
         log(level:.warning,
             contents: contents,
             tag: tag,
-            destination: destination,
+            loggers: loggers,
             flag: flag,
             isAsynchronously: isAsynchronously,
             file: file,
@@ -167,7 +179,7 @@ extension TBOLog {
     }
     public static func e(_ contents: Any...,
         tag: String? = config.tag,
-        destination: Destination = config.destination,
+        loggers: [BaseLogger] = config.loggers,
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -176,7 +188,7 @@ extension TBOLog {
         log(level:.error,
             contents: contents,
             tag: tag,
-            destination: destination,
+            loggers: loggers,
             flag: flag,
             isAsynchronously: isAsynchronously,
             file: file,
@@ -192,7 +204,7 @@ private extension TBOLog {
     static func log(level: Level,
                     contents: [Any],
                     tag: String?,
-                    destination: Destination,
+                    loggers: [BaseLogger],
                     flag: LogInfoFlag,
                     isAsynchronously: Bool,
                     file: String = #file,
@@ -200,8 +212,7 @@ private extension TBOLog {
                     function: String = #function) {
         guard true == isWorking,
             true == level.canWork else { return }
-        
-        let loggers = destination.getLoggers()
+
         guard false == loggers.isEmpty else {
             showNOLoggerInfo()
             return
@@ -220,7 +231,7 @@ private extension TBOLog {
     }
 
     static func dispatchLog(_ info: LogInfo,
-                     to loggers: [QueueLogger],
+                     to loggers: [BaseLogger],
                      isAsynchronously: Bool = TBOLog.config.isAsynchronously) {
         _ = loggers.map {
             $0.flush(info, isAsynchronously: isAsynchronously)
@@ -238,7 +249,7 @@ private extension TBOLog {
             let version = infoDict["CFBundleShortVersionString"] {
             startInfo = "TBOLog Start Success! Version: " + String(describing: version)
                 + " Level: " + config.level.description
-                + " Destination: " + config.destination.description
+                //+ " Destination: " + config.destination.description
         } else {
             startInfo = "TBOLog Start Success!"
         }
@@ -246,7 +257,7 @@ private extension TBOLog {
     }
     
     static func showStopInfo() {
-        let stopInfo = "TBOLog Stoped!"
+        let stopInfo = "TBOLog Stopped!"
         show(stopInfo)
     }
     
@@ -259,5 +270,3 @@ private extension TBOLog {
         i(info, flag: [.level, .threadName])
     }
 }
-
-

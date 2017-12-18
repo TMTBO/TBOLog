@@ -16,7 +16,7 @@ class ASLLoggerTest: QuickSpec {
     override func spec() {
         describe("ASLLogger") {
             var info: LogInfo!
-            var logger: ASLLogger! = ASLLogger.shared
+            var logger: ASLLogger! = ASLLogger.default
             
             afterEach {
                 info = nil

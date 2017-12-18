@@ -7,13 +7,15 @@
 
 import Foundation
 
-class ConsoleLogger: QueueLogger {
+public class ConsoleLogger: QueueLogger {
     
-    static let shared = ConsoleLogger()
-    
-    override private init() {
+    public static let `default` = ConsoleLogger()
+
+    override
+    init(identifier: String = "default-consloe-logger") {
+        super.init(identifier: identifier)
     }
-    
+
     override func write(_ info: LogInfo) {
         print(info.description)
     }
