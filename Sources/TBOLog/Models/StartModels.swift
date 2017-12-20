@@ -19,10 +19,29 @@ public struct StartConfiguration {
     public var path: String = "TBOLog"
     public var tag: String? = nil
     public var isAsynchronously = true
+    
+    init(level: Level = .verbose,
+         loggers: [BaseLogger] = [ConsoleLogger.default],
+         flag: LogInfoFlag = .full,
+         path: String = "TBOLog",
+         tag: String? = nil,
+         isAsynchronously: Bool = true) {
+        self.level = level
+        self.loggers = loggers
+        self.flag = flag
+        self.path = path
+        self.tag = tag
+        self.isAsynchronously = isAsynchronously
+    }
+    
+    public var defaultLogger = ConsoleLogger.default
 }
 
 extension StartConfiguration {
     mutating func append(logger: BaseLogger) {
+        _ = loggers
+            .filter { $0.identifier == logger.identifier }
+            .map { remove(logger: $0) }
         loggers.append(logger)
     }
 
@@ -32,16 +51,7 @@ extension StartConfiguration {
         loggers.remove(at: loggerIndex)
     }
 
-    mutating func replace(identifier: String, with logger: BaseLogger) {
-        guard let oldLogger = self.logger(identifier: identifier),
-              let loggerIndex = loggers.index(of: oldLogger) else {
-            append(logger: logger)
-            return
-        }
-        loggers[loggerIndex] = logger
-    }
-
     func logger(identifier: String) -> BaseLogger? {
-        return loggers.filter { $0.identifier == identifier }.first
+        return loggers.filter { $0.identifier.identifier == identifier }.first
     }
 }

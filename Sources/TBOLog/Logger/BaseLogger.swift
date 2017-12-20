@@ -9,10 +9,10 @@ import Foundation
 
 open class BaseLogger {
 
-    let identifier: String
+    public let identifier: LoggerIdentifier
 
     init(identifier: String = "") {
-        self.identifier = identifier
+        self.identifier = LoggerIdentifier(identifier: identifier)
     }
 
     func flush(_ info: LogInfo, isAsynchronously: Bool) {
@@ -26,6 +26,14 @@ open class BaseLogger {
 
 extension BaseLogger: Equatable {
     public static func ==(lhs: BaseLogger, rhs: BaseLogger) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}
+
+public struct LoggerIdentifier: Equatable {
+    var identifier: String
+    
+    public static func ==(lhs: LoggerIdentifier, rhs: LoggerIdentifier) -> Bool {
         return lhs.identifier == rhs.identifier
     }
 }

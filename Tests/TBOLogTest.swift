@@ -129,7 +129,33 @@ class TBOLogSpec: QuickSpec {
                 it("Log with tag") {
                     TBOLog.e("Log with tag", tag: "------>")
                 }
+                
+                describe("log to file") {
+                    var defaultId: LoggerIdentifier?
+                    beforeEach {
+                        guard var url = self.getDocumentURL() else { return }
+                        url = url.appendingPathComponent("/log1")
+                        let fileLogger = FileLogger(fileURL: url, canAppend: true)
+                        defaultId = fileLogger.identifier
+                        TBOLog.append(logger: fileLogger)
+                        TBOLog.start(.verbose)
+                    }
+                    
+                    it("default file logger") {
+                        TBOLog.i("Log to file logger", loggers: [defaultId!])
+                        TBOLog.v(["person": ["p1", "p2"], "hello": ["hello", "world"]], loggers: [defaultId!])
+                    }
+                }
             }
         }
+    }
+    
+    func getDocumentURL() -> URL? {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
+            let url = URL(string: path) else {
+                print("path error")
+                return nil
+        }
+        return url
     }
 }

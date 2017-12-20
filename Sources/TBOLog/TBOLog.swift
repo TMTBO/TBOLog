@@ -19,24 +19,37 @@ public struct TBOLog {
 
 extension TBOLog {
     
+    /// Start Log With Parameters
+    ///
+    /// - Parameters:
+    ///   - level: Log Level, default: '.verbose'
+    ///   - loggers: Work Loggers, default: 'ConsoleLogger.default'
+    ///   - infoFlag: Log info flags, default: '.full'
+    ///   - path: File Logger dictionary, default: 'TBOLog'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - tag: The log tag string
+    /// - Returns: Start result
     @discardableResult
     public static func start(
-        _ level: Level,
-        loggers: [BaseLogger] = [ConsoleLogger.default],
-        infoTag: LogInfoFlag = .full,
+        _ level: Level = .verbose,
+        loggers: [BaseLogger] = config.loggers,
+        infoFlag: LogInfoFlag = .full,
         path: String = "TBOLog",
         isAsynchronously: Bool = config.isAsynchronously,
         tag: String? = nil) -> StartResult {
-        config = StartConfiguration()
         config.level = level
         config.loggers = loggers
-        config.flag = infoTag
+        config.flag = infoFlag
         config.path = path
         config.tag = tag
         config.isAsynchronously = isAsynchronously
         return start(config)
     }
     
+    /// Start Log With Configuartions
+    ///
+    /// - Parameter configuration: Start configurations
+    /// - Returns: Start result
     @discardableResult
     public static func start(_ configuration: StartConfiguration = config) -> StartResult {
         var result = StartResult(isSuccess: false, reason: nil)
@@ -45,18 +58,13 @@ extension TBOLog {
             return result
         }
         LogInfo.prepareLogInfoDateFormat()
-        
-        guard let basePath = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory,
-            .userDomainMask,
-            true).first,
-            var logPath = URL(string: basePath) else {
-                fatalError("Start TBOLog failed, reason: Can not find user document directory")
-        }
-        logPath.appendPathComponent(configuration.path)
-        
         config = configuration
-        
+
+        if var docURL = getDocumentURL() {
+            docURL.appendPathComponent(config.path)
+            try? FileManager.default.createDirectory(atPath: docURL.path, withIntermediateDirectories: true)
+        }
+
         on = true
         result.isSuccess = on
         
@@ -64,6 +72,9 @@ extension TBOLog {
         return result
     }
     
+    /// Stop Log, The Loggers will not work
+    ///
+    /// - Returns: Stop Result
     @discardableResult
     public static func stop() -> StartResult {
         var result = StartResult(isSuccess: false, reason: nil)
@@ -81,31 +92,48 @@ extension TBOLog {
 // MARK: - Logger Operation
 
 extension TBOLog {
-    // add
+    
+    /// Add a Logger
+    ///
+    /// - Parameter logger: Can be `ASLLogger`, `ConsoleLogger` and `FileLogger`
     public static func append(logger: BaseLogger) {
         config.append(logger: logger)
     }
 
-    // remove
+    /// Remove a Logger
+    ///
+    /// - Parameter logger: Can be `ASLLogger`, `ConsoleLogger` and `FileLogger`
     public static func remove(logger: BaseLogger) {
         config.remove(logger: logger)
     }
-    // edit
-    public static func replace(identifier: String, with logger: BaseLogger) {
-
-    }
-    // query
-    public static func logger(identifier: String) -> BaseLogger {
-        return config.logger(identifier: identifier)!
+    
+    /// Get an added logger
+    ///
+    /// - Parameter identifier: The logger identifier
+    /// - Returns: The logger if has
+    public static func logger(identifier: LoggerIdentifier) -> BaseLogger? {
+        return config.logger(identifier: identifier.identifier)
     }
 }
 
 // MARK: - Output Log
 
 extension TBOLog {
+    
+    /// Log with `.verbose` level
+    ///
+    /// - Parameters:
+    ///   - contents: The content to log
+    ///   - tag: The info tags
+    ///   - loggers: The Loggers which should response the `contents`, default: `ConsoleLogger`
+    ///   - flag: Log info flags, default: '.full'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - file: Current file name
+    ///   - line: The line number where the function called
+    ///   - function: The function name where this function called
     public static func v(_ contents: Any...,
         tag: String? = config.tag,
-        loggers: [BaseLogger] = config.loggers,
+        loggers: [LoggerIdentifier] = [config.defaultLogger.identifier],
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -122,9 +150,20 @@ extension TBOLog {
             function: function)
     }
     
+    /// Log with `.debug` level
+    ///
+    /// - Parameters:
+    ///   - contents: The content to log
+    ///   - tag: The info tags
+    ///   - loggers: The Loggers which should response the `contents`, default: `ConsoleLogger`
+    ///   - flag: Log info flags, default: '.full'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - file: Current file name
+    ///   - line: The line number where the function called
+    ///   - function: The function name where this function called
     public static func d(_ contents: Any...,
         tag: String? = config.tag,
-        loggers: [BaseLogger] = config.loggers,
+        loggers: [LoggerIdentifier] = [config.defaultLogger.identifier],
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -141,9 +180,20 @@ extension TBOLog {
             function: function)
     }
     
+    /// Log with `.info` level
+    ///
+    /// - Parameters:
+    ///   - contents: The content to log
+    ///   - tag: The info tags
+    ///   - loggers: The Loggers which should response the `contents`, default: `ConsoleLogger`
+    ///   - flag: Log info flags, default: '.full'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - file: Current file name
+    ///   - line: The line number where the function called
+    ///   - function: The function name where this function called
     public static func i(_ contents: Any...,
         tag: String? = config.tag,
-        loggers: [BaseLogger] = config.loggers,
+        loggers: [LoggerIdentifier] = [config.defaultLogger.identifier],
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -159,9 +209,21 @@ extension TBOLog {
             line: line,
             function: function)
     }
+    
+    /// Log with `.warning` level
+    ///
+    /// - Parameters:
+    ///   - contents: The content to log
+    ///   - tag: The info tags
+    ///   - loggers: The Loggers which should response the `contents`, default: `ConsoleLogger`
+    ///   - flag: Log info flags, default: '.full'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - file: Current file name
+    ///   - line: The line number where the function called
+    ///   - function: The function name where this function called
     public static func w(_ contents: Any...,
         tag: String? = config.tag,
-        loggers: [BaseLogger] = config.loggers,
+        loggers: [LoggerIdentifier] = [config.defaultLogger.identifier],
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -177,9 +239,21 @@ extension TBOLog {
             line: line,
             function: function)
     }
+    
+    /// Log with `.error` level
+    ///
+    /// - Parameters:
+    ///   - contents: The content to log
+    ///   - tag: The info tags
+    ///   - loggers: The Loggers which should response the `contents`, default: `ConsoleLogger`
+    ///   - flag: Log info flags, default: '.full'
+    ///   - isAsynchronously: Should asynchronously log, default: 'true'
+    ///   - file: Current file name
+    ///   - line: The line number where the function called
+    ///   - function: The function name where this function called
     public static func e(_ contents: Any...,
         tag: String? = config.tag,
-        loggers: [BaseLogger] = config.loggers,
+        loggers: [LoggerIdentifier] = [config.defaultLogger.identifier],
         flag: LogInfoFlag = config.flag,
         isAsynchronously: Bool = config.isAsynchronously,
         file: String = #file,
@@ -204,7 +278,7 @@ private extension TBOLog {
     static func log(level: Level,
                     contents: [Any],
                     tag: String?,
-                    loggers: [BaseLogger],
+                    loggers: [LoggerIdentifier],
                     flag: LogInfoFlag,
                     isAsynchronously: Bool,
                     file: String = #file,
@@ -218,8 +292,13 @@ private extension TBOLog {
             return
         }
         
-        let fileName = String((file as NSString)
-            .lastPathComponent)
+        let fileName: String
+        if let lastComponent = URL(string: file)?.deletingPathExtension().lastPathComponent {
+            fileName = lastComponent
+        } else {
+            fileName = String((file as NSString).lastPathComponent)
+        }
+        
         let info = LogInfo(level: level,
                            content: contents,
                            file: fileName,
@@ -231,10 +310,10 @@ private extension TBOLog {
     }
 
     static func dispatchLog(_ info: LogInfo,
-                     to loggers: [BaseLogger],
+                     to loggers: [LoggerIdentifier],
                      isAsynchronously: Bool = TBOLog.config.isAsynchronously) {
         _ = loggers.map {
-            $0.flush(info, isAsynchronously: isAsynchronously)
+            logger(identifier: $0)?.flush(info, isAsynchronously: isAsynchronously)
         }
     }
 }
@@ -268,5 +347,14 @@ private extension TBOLog {
     
     static func show(_ info: String) {
         i(info, flag: [.level, .threadName])
+    }
+
+    static func getDocumentURL() -> URL? {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
+              let url = URL(string: path) else {
+            assertionFailure("TBOLog Get DocumentDirectory Error!")
+            return nil
+        }
+        return url
     }
 }

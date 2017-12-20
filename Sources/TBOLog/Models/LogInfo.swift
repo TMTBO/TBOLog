@@ -27,7 +27,7 @@ struct LogInfo {
             desc += tag + " "
         }
         desc += parseContent(content)
-        
+        desc += "\n"
         return desc
     }
     

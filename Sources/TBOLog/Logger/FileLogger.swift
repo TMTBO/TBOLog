@@ -35,7 +35,7 @@ open class FileLogger: QueueLogger {
 
 	override
 	func write(_ info: LogInfo) {
-		guard let infoData = info.contentDescription.data(using: .utf8) else {
+		guard let infoData = info.description.data(using: .utf8) else {
 			return
 		}
 		write(data: infoData)
