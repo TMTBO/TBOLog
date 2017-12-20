@@ -48,7 +48,7 @@ struct LogInfo {
         return dict
     }
     
-    private static let formatter = DateFormatter()
+    internal static let formatter = DateFormatter()
 
     init(level: Level,
          content: [Any],

@@ -12,7 +12,7 @@ public class ConsoleLogger: QueueLogger {
     public static let `default` = ConsoleLogger()
 
     override
-    init(identifier: String = "default-consloe-logger") {
+    init(identifier: String = "default-console-logger") {
         super.init(identifier: identifier)
     }
 
