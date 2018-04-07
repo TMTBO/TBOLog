@@ -15,11 +15,8 @@ open class BaseLogger {
         self.identifier = LoggerIdentifier(identifier: identifier)
     }
 
-    func flush(_ info: LogInfo, isAsynchronously: Bool) {
-        precondition(false, "This Method Must Be Override!")
-    }
-
-    func write(_ info: LogInfo) {
+    internal
+    func output(_ info: LogInfo) {
         precondition(false, "This Method Must Be Override!")
     }
 }

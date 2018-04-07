@@ -5,17 +5,28 @@
 import Foundation
 
 open class QueueLogger: BaseLogger {
-	private let logQueue = DispatchQueue(label: "tbolog.logqueue")
+	internal let logQueue = OperationQueue()
+    
+    override init(identifier: String) {
+        logQueue.name = "tbolog.logqueue"
+        logQueue.maxConcurrentOperationCount = 1
+        super.init(identifier: identifier)
+    }
 
 	override
-	func flush(_ info: LogInfo, isAsynchronously: Bool) {
-		let workItem: DispatchWorkItem = DispatchWorkItem {
-			self.write(_: info)
-		}
-		if isAsynchronously {
-			logQueue.async(execute: workItem)
+	func output(_ info: LogInfo) {
+		if info.isAsynchronously {
+            logQueue.addOperation { [weak self] in
+                guard let `self` = self else { return }
+                self.write(info)
+            }
 		} else {
-			logQueue.sync(execute: workItem)
+			self.write(info)
 		}
 	}
+    
+    internal
+    func write(_ info: LogInfo) {
+        precondition(false, "This Method Must Be Override!")
+    }
 }

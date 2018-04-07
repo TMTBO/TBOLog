@@ -43,6 +43,15 @@ class FileLoggerSpec: QuickSpec {
                         let result = logger1!.createFile(at: url)
                         expect(result).to(equal(true))
                     }
+                    
+                    it("Output log") {
+                        let info = LogInfo(level: .verbose, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Verbose"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
+                        logger1!.output(info)
+                    }
+                    it("Selector") {
+//                        self.perform(Selector("hello(_:)"))
+//                        #selector(hello(_:))
+                    }
                 }
 			}
 
@@ -56,5 +65,9 @@ class FileLoggerSpec: QuickSpec {
                 return nil
         }
         return url
+    }
+    
+    func hello(_ world: String) {
+        print("Hello \(world)")
     }
 }

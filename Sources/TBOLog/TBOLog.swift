@@ -305,15 +305,15 @@ private extension TBOLog {
                            line: line,
                            function: function,
                            tempInfoFlag: flag,
-                           tag: tag)
-        dispatchLog(info, to: loggers, isAsynchronously: isAsynchronously)
+                           tag: tag,
+                           isAsynchronously: isAsynchronously)
+        dispatchLog(info, to: loggers)
     }
 
     static func dispatchLog(_ info: LogInfo,
-                     to loggers: [LoggerIdentifier],
-                     isAsynchronously: Bool = TBOLog.config.isAsynchronously) {
+                     to loggers: [LoggerIdentifier]) {
         _ = loggers.map {
-            logger(identifier: $0)?.flush(info, isAsynchronously: isAsynchronously)
+            logger(identifier: $0)?.output(info)
         }
     }
 }

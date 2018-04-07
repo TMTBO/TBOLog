@@ -18,7 +18,7 @@ public struct StartConfiguration {
     public var flag: LogInfoFlag = .full
     public var path: String = "TBOLog"
     public var tag: String? = nil
-    public var isAsynchronously = true
+    public var isAsynchronously = false
     
     init(level: Level = .verbose,
          loggers: [BaseLogger] = [ConsoleLogger.default],

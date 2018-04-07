@@ -32,27 +32,27 @@ class ASLLoggerTest: QuickSpec {
                 }
                 
                 it("verbose") {
-                    info = LogInfo(level: .verbose, content: ["Hello ASLLogger", "TBOLog", "ASL", "Verbose"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .verbose, content: ["Hello ASLLogger", "TBOLog", "ASL", "Verbose"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("debug") {
-                    info = LogInfo(level: .debug, content: ["Hello ASLLogger", "TBOLog", "ASL", "Debug"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .debug, content: ["Hello ASLLogger", "TBOLog", "ASL", "Debug"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("info") {
-                    info = LogInfo(level: .info, content: ["Hello ASLLogger", "TBOLog", "ASL", "Info"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .info, content: ["Hello ASLLogger", "TBOLog", "ASL", "Info"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("warning") {
-                    info = LogInfo(level: .warning, content: ["Hello ASLLogger", "TBOLog", "ASL", "Warning"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .warning, content: ["Hello ASLLogger", "TBOLog", "ASL", "Warning"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("error") {
-                    info = LogInfo(level: .error, content: ["Hello ASLLogger", "TBOLog", "ASL", "Error"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .error, content: ["Hello ASLLogger", "TBOLog", "ASL", "Error"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("none") {
-                    info = LogInfo(level: .none, content: ["Hello ASLLogger", "TBOLog", "ASL", "None"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .none, content: ["Hello ASLLogger", "TBOLog", "ASL", "None"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
             }
             
@@ -64,27 +64,27 @@ class ASLLoggerTest: QuickSpec {
                 }
                 
                 it("verbose") {
-                    info = LogInfo(level: .verbose, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Verbose"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .verbose, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Verbose"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("debug") {
-                    info = LogInfo(level: .debug, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Debug"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .debug, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Debug"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("info") {
-                    info = LogInfo(level: .info, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Info"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .info, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Info"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("warning") {
-                    info = LogInfo(level: .warning, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Warning"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .warning, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Warning"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("error") {
-                    info = LogInfo(level: .error, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Error"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .error, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "Error"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
                 
                 it("none") {
-                    info = LogInfo(level: .none, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "None"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger")
+                    info = LogInfo(level: .none, content: ["Hello ASLLogger", "TBOLog", "OSLOG", "None"], file: #file, line: #line, function: #function, tempInfoFlag: .full, tag: "ASLLogger", isAsynchronously: false)
                 }
             }
             

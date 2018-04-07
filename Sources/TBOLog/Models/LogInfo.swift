@@ -13,6 +13,7 @@ struct LogInfo {
     let file: String
     let line: Int
     let function: String
+    let isAsynchronously: Bool
     
     let tempInfoFlag: LogInfoFlag
     let tag: String?
@@ -56,7 +57,8 @@ struct LogInfo {
          line: Int,
          function: String,
          tempInfoFlag: LogInfoFlag,
-         tag: String?) {
+         tag: String?,
+         isAsynchronously: Bool) {
         self.level = level
         self.content = content
         self.file = file
@@ -64,6 +66,7 @@ struct LogInfo {
         self.function = function
         self.tempInfoFlag = tempInfoFlag
         self.tag = tag
+        self.isAsynchronously = isAsynchronously
         self.dateString = type(of: self).formatter.string(from: Date())
         self.tname = type(of: self).threadName()
     }
